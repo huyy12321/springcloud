@@ -13,6 +13,9 @@
         <module>eureka-client-user-service</module>
         <module>eureka-client-article-service</module>
         <module>eureka-one-server</module>
+        <module>ribbon-native-demo</module>
+        <module>eureka-client-user-service-one</module>
+        <module>Hystrix</module>
     </modules>
 
     <properties>

@@ -12,6 +12,8 @@ import org.springframework.web.client.RestTemplate;
 public class ArticleController {
     @Autowired
     private RestTemplate restTemplate;
+    @Autowired
+    private UserRemoteClient userRemoteClient;
 
     /**
      * eureka-client-user-service 对应服务提供者配置文件中的名字
@@ -20,5 +22,10 @@ public class ArticleController {
     @GetMapping("/say")
     public String say(){
         return restTemplate.getForObject("http://eureka-client-user-service/test/hello",String.class);
+    }
+
+    @GetMapping("/hello")
+    public String hello(){
+        return userRemoteClient.hello();
     }
 }

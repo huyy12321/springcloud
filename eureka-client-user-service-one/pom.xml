@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>eureka-client-article-service</artifactId>
+    <artifactId>eureka-client-user-service-one</artifactId>
 
     <dependencies>
         <dependency>
@@ -21,23 +21,11 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
-        <!-- 负载均衡 eureka中自带-->
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.cloud</groupId>-->
-<!--            <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>-->
-<!--        </dependency>-->
-        <!-- Spring Retry重试机制-->
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.retry</groupId>-->
-<!--            <artifactId>spring-retry</artifactId>-->
-<!--        </dependency>-->
-
-        <!-- Spring Cloud 中集成 Feign -->
+        <!-- 开启健康检查所需依赖-->
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
-
     </dependencies>
 
 </project>
