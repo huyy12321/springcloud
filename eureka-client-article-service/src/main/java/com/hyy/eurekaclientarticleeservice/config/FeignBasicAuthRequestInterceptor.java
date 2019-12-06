@@ -9,6 +9,6 @@ import feign.RequestTemplate;
 public class FeignBasicAuthRequestInterceptor implements RequestInterceptor {
     @Override
     public void apply(RequestTemplate requestTemplate) {
-        System.out.println("业务逻辑");
+        System.out.println("请求拦截，进行处理。。。");
     }
 }

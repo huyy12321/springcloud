@@ -1,5 +1,6 @@
 package com.hyy.eurekaclientarticleeservice.controller;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,11 +22,27 @@ public class ArticleController {
      */
     @GetMapping("/say")
     public String say(){
-        return restTemplate.getForObject("http://eureka-client-user-service/test/hello",String.class);
+        String forObject = restTemplate.getForObject("http://eureka-client-user-service/test/hello", String.class);
+        return forObject;
     }
 
     @GetMapping("/hello")
     public String hello(){
         return userRemoteClient.hello();
+    }
+
+
+    /**
+     * Hystrix 容错机制
+     * @return
+     */
+    @GetMapping("/callHello")
+    @HystrixCommand(fallbackMethod = "defaultCallHello")
+    public String callHello(){
+        return restTemplate.getForObject("http://localhost:8088/house/hello", String.class);
+    }
+
+    public String defaultCallHello() {
+        return "Hystrix 容错机制返回";
     }
 }

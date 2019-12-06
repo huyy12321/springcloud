@@ -16,6 +16,7 @@
         <module>ribbon-native-demo</module>
         <module>eureka-client-user-service-one</module>
         <module>Hystrix</module>
+        <module>zuul-demo</module>
     </modules>
 
     <properties>
