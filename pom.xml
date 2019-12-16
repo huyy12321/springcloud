@@ -17,6 +17,7 @@
         <module>eureka-client-user-service-one</module>
         <module>Hystrix</module>
         <module>zuul-demo</module>
+        <module>apollo</module>
     </modules>
 
     <properties>
@@ -29,7 +30,7 @@
         <version>2.0.6.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-
+    
     <!-- Spring Cloud -->
     <dependencyManagement>
         <dependencies>

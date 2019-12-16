@@ -4,6 +4,6 @@
 /eureka-one-server/target/
 /eureka-server/target/
 /.idea
-target/
-*.iml
+/*/*.iml
 
+/*/target/
